@@ -8,24 +8,27 @@
 	<section class="container">
 		<article class="column">
 			<header><h2>Focos Encender</h2></header>
-			<button>Cuarto 1 Encender</button>
-			<button>Cuarto 2 Encender</button>
-			<button>Cuarto 3 Encender</button>
-			<button>Sala Encender</button>
-			<button>Cocina Encender</button>
-			<button>Bano Encender</button>
+			<form method="POST" action="{{url_for('Encender')}}">
+			<input type="submit" name="Encender" value="Foco1"></input>
+			<input type="submit" name="Encender" value="Foco2"></input>
+			<input type="submit" name="Encender" value="Foco3"></input>
+			<input type="submit" name="Encender" value="Foco4"></input>
+			<input type="submit" name="Encender" value="Foco5"></input>
+			<input type="submit" name="Encender" value="Foco6"></input>
 			<button>Atenuacion</button>
+			</form>
 		</article>
 		<article class="column">
 			<header><h2>Focos Apagar</h2></header>
-			<button>Cuarto 1 Apagar</button>
-			<button>Cuarto 2 Apagar</button>
-			<button>Cuarto 3 Apagar</button>
-			<button>Sala Apagar</button>
-			<button>Cocina Apagar</button>
-			<button>Bano Apagar</button>
+			<form method="POST" action="{{url_for('Apagar')}}">
+			<input type="submit" name="Apagar" value="Foco1"></input>
+			<input type="submit" name="Apagar" value="Foco2"></input>
+			<input type="submit" name="Apagar" value="Foco3"></input>
+			<input type="submit" name="Apagar" value="Foco4"></input>
+			<input type="submit" name="Apagar" value="Foco5"></input>
+			<input type="submit" name="Apagar" value="Foco6"></input>
+			</form>
 		</article>
-
 	</section>
 </body>
 </html>

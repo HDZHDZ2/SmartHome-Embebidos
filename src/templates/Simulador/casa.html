@@ -388,7 +388,23 @@ img {
       <div class="ventana6"></div>
       <div class='barrote11'></div>
       <div class='barrote12'></div>
-			<div class='garage'></div>
+			{%if lugar==NULL%}
+			<div class='foco1'><img id="Foco1" src="static/focoapagado.png" onmouseover="Foco1()" ></div>
+			<div class='foco2'><img id="Foco2" src="static/focoapagado.png" onmouseover="Foco2()" ></div>
+			<div class='foco3'><img id="Foco3" src="static/focoapagado.png" onmouseover="Foco3()" ></div>
+			<div class='foco4'><img id="Foco4" src="static/focoapagado.png" onmouseover="Foco4()" ></div>
+			<div class='foco5'><img id="Foco5" src="static/focoapagado.png" onmouseover="Foco5()" ></div>
+			<div class='foco6'><img id="Foco6" src="static/focoapagado.png" onmouseover="Foco6()" ></div>
+			<div class='garage'><img id="Carro" class=carrotam src="" onmouseover="Garage()" ></div>
+			{%else%}
+			<div class='foco1'><img id="Foco1" src="static/focoapagado.png" onmouseover="main('{{lugar}}','{{estado}}')" ></div>
+			<div class='foco2'><img id="Foco2" src="static/focoapagado.png" onmouseover="main('{{lugar}}','{{estado}}')" ></div>
+			<div class='foco3'><img id="Foco3" src="static/focoapagado.png" onmouseover="main('{{lugar}}','{{estado}}')" ></div>
+			<div class='foco4'><img id="Foco4" src="static/focoapagado.png" onmouseover="main('{{lugar}}','{{estado}}')" ></div>
+			<div class='foco5'><img id="Foco5" src="static/focoapagado.png" onmouseover="main('{{lugar}}','{{estado}}')" ></div>
+			<div class='foco6'><img id="Foco6" src="static/focoapagado.png" onmouseover="main('{{lugar}}','{{estado}}')" ></div>
+			<div class='garage'><img id="Carro" class=carrotam src="" onmouseover="main('{{lugar}}','{{estado}}')" ></div>
+			{% endif %}
       <div class='puerta'>
       <div class='pomo'></div>
       </div>
@@ -407,5 +423,6 @@ img {
     </div>
   </div>
 </body>
+  <script src='static/main.js'></script>         
 </html>
 

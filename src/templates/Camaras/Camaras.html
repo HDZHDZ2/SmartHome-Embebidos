@@ -8,9 +8,12 @@
 	<section class="container">
 		<article class="column">
 			<header><h2>Camaras de Seguridad</h2></header>
-			<button>Camara1 Sala</button>
-			<button>Camara2 Garage</button>
-			<button>Camara3 Cuartos</button>
+			<form method="POST" action="{{url_for('Camara1')}}">
+			<input type="submit" name="Camara1" value="Camara1"></input>
+			</form>
+			<form method="POST" action="{{url_for('Camara2')}}">
+			<input type="submit" name="Camara2" value="Camara2"></input>
+			</form>
 			<button>CamaraLive</button>
 		</article>
 	</section>
