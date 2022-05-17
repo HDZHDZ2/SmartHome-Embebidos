@@ -368,6 +368,12 @@ img {
   </style>  
 </head>
 <body>
+		<header><h2>Menu</h2></header>
+		<article class="column">
+		<form method="POST" action="{{url_for('index')}}">
+		<input type="submit" name="menu" value="menu"></input>
+		</form>
+		</article>
   <div class='container'>
     <div class='casa'>
       <div class='ventana1'></div>
@@ -397,13 +403,13 @@ img {
 			<div class='foco6'><img id="Foco6" src="static/focoapagado.png" onmouseover="Foco6()" ></div>
 			<div class='garage'><img id="Carro" class=carrotam src="" onmouseover="Garage()" ></div>
 			{%else%}
-			<div class='foco1'><img id="Foco1" src="static/focoapagado.png" onmouseover="main('{{lugar}}','{{estado}}')" ></div>
-			<div class='foco2'><img id="Foco2" src="static/focoapagado.png" onmouseover="main('{{lugar}}','{{estado}}')" ></div>
-			<div class='foco3'><img id="Foco3" src="static/focoapagado.png" onmouseover="main('{{lugar}}','{{estado}}')" ></div>
-			<div class='foco4'><img id="Foco4" src="static/focoapagado.png" onmouseover="main('{{lugar}}','{{estado}}')" ></div>
-			<div class='foco5'><img id="Foco5" src="static/focoapagado.png" onmouseover="main('{{lugar}}','{{estado}}')" ></div>
-			<div class='foco6'><img id="Foco6" src="static/focoapagado.png" onmouseover="main('{{lugar}}','{{estado}}')" ></div>
-			<div class='garage'><img id="Carro" class=carrotam src="" onmouseover="main('{{lugar}}','{{estado}}')" ></div>
+			<div class='foco1'><img id="Foco1" src="static/focoapagado.png" onload="main('{{lugar}}','{{estado}}')" ></div>
+			<div class='foco2'><img id="Foco2" src="static/focoapagado.png" onload="main('{{lugar}}','{{estado}}')" ></div>
+			<div class='foco3'><img id="Foco3" src="static/focoapagado.png" onload="main('{{lugar}}','{{estado}}')" ></div>
+			<div class='foco4'><img id="Foco4" src="static/focoapagado.png" onload="main('{{lugar}}','{{estado}}')" ></div>
+			<div class='foco5'><img id="Foco5" src="static/focoapagado.png" onload="main('{{lugar}}','{{estado}}')" ></div>
+			<div class='foco6'><img id="Foco6" src="static/focoapagado.png" onload="main('{{lugar}}','{{estado}}')" ></div>
+			<div class='garage'><img id="Carro" class=carrotam src="" onload="main('{{lugar}}','{{estado}}')" ></div>
 			{% endif %}
       <div class='puerta'>
       <div class='pomo'></div>
@@ -422,6 +428,7 @@ img {
       <div  class='manzana3'></div>
     </div>
   </div>
+
 </body>
   <script src='static/main.js'></script>         
 </html>

@@ -7,16 +7,20 @@ app = Flask(__name__)
 def focos():
 	return render_template('/Focos/Focos.html')
 
-@app.route('/',methods=['GET'])
+@app.route('/',methods=["GET","POST"])
 def index():
+  return render_template('/Menu/Menu.html')
 	
-	return render_template('/Simulador/casa.html')
 
-@app.route('/camaras')
+@app.route('/camaras',methods=["GET","POST"])
 def camaras():
     return render_template('/Camaras/Camaras.html')
 
-@app.route('/timbre')
+@app.route('/simulador',methods=["GET","POST"])
+def simulador():
+	return render_template('/Simulador/casa.html')
+
+@app.route('/timbre',methods=["GET","POST"])
 def timbre():
     return render_template('/Timbre/Timbre.html')
 
@@ -48,11 +52,11 @@ def Apagar():
 def Camara1():
 	lugar=request.form.get("Camara1")
 	estado='Camara1'
-	return redirect('http://192.168.1.156:4747/video')
+	return redirect('http://192.168.1.232:4747')
 
 @app.route('/Camara2', methods=["GET","POST"])
 def Camara2():
 	lugar=request.form.get("Camara2")
 	estado='Camara2'
-	return render_template('/Simulador/casa.html', lugar=lugar,estado=estado)
+	return redirect('http://192.168.1.156:4747')
 

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Menu SmartHome</title>
+</head>
+<body>
+	<header><h1>Control Focos Home</h1></header>
+	<section class="container">
+		<article class="column">
+			<form method="POST" action="{{url_for('simulador')}}">
+			<input type="submit" name="simulador" value="simulador"></input>
+			</form>
+		</article>
+		<article class="column">
+			<form method="POST" action="{{url_for('focos')}}">
+			<input type="submit" name="focos" value="focos"></input>
+			</form>
+		</article>
+		<article class="column">
+			<form method="POST" action="{{url_for('camaras')}}">
+			<input type="submit" name="camaras" value="camaras"></input>
+			</form>
+		</article>
+		<article class="column">
+			<form method="POST" action="{{url_for('timbre')}}">
+			<input type="submit" name="timbre" value="timbre"></input>
+			</form>
+		</article>
+	</section>
+</body>
+</html>

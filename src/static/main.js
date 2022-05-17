@@ -5,6 +5,7 @@ function Foco1()
 	if(estado=='On')
 	{
     imagen.src="static/foco.png";
+		setTimeOut(100);
 	}
 	else
 	{
@@ -119,12 +120,14 @@ function Timbre()
   audio.play();
 }
 
+
 function main(action,value)
 {
 	if(action=='Foco1')
 	{
 		localStorage.setItem('Foco1',value);
 		Foco1();
+
 	}
 	if(action=='Foco2')
 	{
