@@ -1,31 +1,42 @@
+<!-- Proyecto Final Sistemas Embebidos -->
+<!-- Smart Home Panel Camaras -->
+<!-- Autores: Hernández Hernández Alonso de Jesús -->
+<!-- 					Alvarado García Jose Manuel -->
+<!-- Fecha: 23 de Mayo del 2022 -->
 <!DOCTYPE html>
 <html>
 <head>
+<!-- Panel de Control de Camaras -->
 <title>Camaras Control Panel</title>
 </head>
 <body>
+<!-- Botones  -->
 	<header><h1>Controles</h1></header>
 	<section class="container">
 		<article class="column">
+			<!-- Titulo Camaras -->
 			<header><h2>Camaras de Seguridad</h2></header>
-			<iframe id="inlineFrameExample"
-				title="Inline Frame Example"
+			<!-- Ejecución de iframe, definimos tamaño de la ventana de la camara -->
+			<iframe 
 				width="500"
 				height="500"
 				src="http://192.168.1.232:4747/video">
 			</iframe>
+			<!-- Declaramos metodo POST y accion formulario en la seccion camara 1-->
 			<form method="POST" action="{{url_for('Camara1')}}">
 			<input type="submit" name="Camara1" value="Camara1"></input>
 			</form>
-			<iframe id="inlineFrameExample"
-				title="Inline Frame Example"
+			<!-- Ejecución de iframe, definimos tamaño de la ventana de la camara -->
+			<iframe 
 				width="500"
 				height="500"
 				src="http://192.168.1.156:4747/video">
 			</iframe>
+			<!-- Declaramos metodo POST y accion formulario en la seccion camara 2-->
 			<form method="POST" action="{{url_for('Camara2')}}">
 			<input type="submit" name="Camara2" value="Camara2"></input>
 			</form>
+			<!-- Declaramos metodo POST y accion formulario en la seccion menu-->
 			<header><h2>Menu</h2></header>
 			<article class="column">
 			<form method="POST" action="{{url_for('index')}}">

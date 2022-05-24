@@ -1,27 +1,38 @@
+<!-- Proyecto Final Sistemas Embebidos -->
+<!-- Smart Home Panel Timbre -->
+<!-- Autores: Hernández Hernández Alonso de Jesús -->
+<!-- 					Alvarado García Jose Manuel -->
+<!-- Fecha: 23 de Mayo del 2022 -->
 <!DOCTYPE html>
 <html>
 <head>
-<title>Panel de Control Focos Home</title>
+<!-- Titulo de la seccion timbre-->
+<title>Panel de Control Timbre Home</title>
 </head>
 <body>
+<!-- Titulo del apartado del timbre -->
 	<header><h1>Control Timbre Grage Home</h1></header>
 	<section class="container">
 		<article class="column">
+			<!-- Titulo timbre y boton submit para envio de valores y llamada de funcion timbre -->
 			<header><h2>Timbre</h2></header>
 			<input type="submit" name="Ring" value="Ring" onclick="Timbre()"></input>
 		</article>
 		<article class="column">
+			<!-- Titulo garage open y formulario para seccion open, envio de valores por submit -->
 			<header><h2>Garage Open</h2></header>
 			<form method="POST" action="{{url_for('Open')}}">
 			<input type="submit" name="GarageO" value="Garage"></input>
 			</form>
 		</article>
 		<article class="column">
+			<!-- Titulo garage close y formulario para seccion close, envio de valores por submit -->
 			<header><h2>Garage Close</h2></header>
 			<form method="POST" action="{{url_for('Close')}}">
 			<input type="submit" name="GarageC" value="Garage"></input>
 			</form>
 		</article>
+			<!-- Titulo garage menu y formulario para seccion menu, envio de valores por submit -->
 		<article class="column">
 			<form method="POST" action="{{url_for('index')}}">
 			<input type="submit" name="menu" value="menu"></input>
@@ -29,5 +40,6 @@
 		</article>
 	</section>
 </body>
+	<!-- Declaracion de ubicacion funcion -->
   <script src='static/main.js'></script> 
 </html>

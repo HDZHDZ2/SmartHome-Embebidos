@@ -1,12 +1,22 @@
+<!-- Proyecto Final Sistemas Embebidos -->
+<!-- Smart Home Simulador -->
+<!-- Autores: Hernández Hernández Alonso de Jesús -->
+<!-- 					Alvarado García Jose Manuel -->
+<!-- Fecha: 23 de Mayo del 2022 -->
+<!-- Está sección de codigo fue complementado por el siguiente autor: -->
+<!-- AnnRV,@annrv,CodePen Home casa css san martin, https://codepen.io/annrv/pen/bzbKrz -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<!-- Titulo de casa simumlador -->
   <title>Casa Simulator</title>
+	<!-- Sección de estilos para dibujado de la casa -->
   <style type="text/css">
     *{
   margin:0;
   padding:0;
 }
+
 .container{
   width:960px;
   height:720px;
@@ -17,7 +27,7 @@
 .casa{
   width: 650px;
   height: 450px;
-  background-color: SandyBrown;
+  background-color: black;
   position: absolute;
   bottom: 120px;
   left: 15%;
@@ -27,7 +37,7 @@
   height:170px;
   border-left: 60px solid transparent;
   border-right: 60px solid transparent;
- border-bottom: 100px solid maroon;
+ border-bottom: 100px solid #ffb300;
   position:absolute;
   bottom:570px;
   left:15%;
@@ -365,15 +375,18 @@ img {
   bottom:104px;
   left:15%;
 }
-  </style>  
+</style>  
 </head>
 <body>
+		<!-- Titulo de el simulador-->
 		<header><h2>Menu</h2></header>
 		<article class="column">
+		<!-- Boton submit para envio de valores y llamada de redirección a menu -->
 		<form method="POST" action="{{url_for('index')}}">
 		<input type="submit" name="menu" value="menu"></input>
 		</form>
 		</article>
+	<!-- Seleccionado de un identificador para modificación por estilos  -->
   <div class='container'>
     <div class='casa'>
       <div class='ventana1'></div>
@@ -394,6 +407,7 @@ img {
       <div class="ventana6"></div>
       <div class='barrote11'></div>
       <div class='barrote12'></div>
+			<!-- Condicional si la variable lugar no recibe ningnu valor para funcionalidad de simulador -->
 			{%if lugar==NULL%}
 			<div class='foco1'><img id="Foco1" src="static/focoapagado.png" onmouseover="Foco1()" ></div>
 			<div class='foco2'><img id="Foco2" src="static/focoapagado.png" onmouseover="Foco2()" ></div>
@@ -402,14 +416,15 @@ img {
 			<div class='foco5'><img id="Foco5" src="static/focoapagado.png" onmouseover="Foco5()" ></div>
 			<div class='foco6'><img id="Foco6" src="static/focoapagado.png" onmouseover="Foco6()" ></div>
 			<div class='garage'><img id="Carro" class=carrotam src="" onmouseover="Garage()" ></div>
+			<!-- En caso contrario significa que el lugar fue establecido y enviará datos para trabajarlos por la funcion javascript -->
 			{%else%}
-			<div class='foco1'><img id="Foco1" src="static/focoapagado.png" onload="main('{{lugar}}','{{estado}}')" ></div>
-			<div class='foco2'><img id="Foco2" src="static/focoapagado.png" onload="main('{{lugar}}','{{estado}}')" ></div>
-			<div class='foco3'><img id="Foco3" src="static/focoapagado.png" onload="main('{{lugar}}','{{estado}}')" ></div>
-			<div class='foco4'><img id="Foco4" src="static/focoapagado.png" onload="main('{{lugar}}','{{estado}}')" ></div>
-			<div class='foco5'><img id="Foco5" src="static/focoapagado.png" onload="main('{{lugar}}','{{estado}}')" ></div>
-			<div class='foco6'><img id="Foco6" src="static/focoapagado.png" onload="main('{{lugar}}','{{estado}}')" ></div>
-			<div class='garage'><img id="Carro" class=carrotam src="" onload="main('{{lugar}}','{{estado}}')" ></div>
+			<div class='foco1'><img id="Foco1" src="static/focoapagado.png" onmousemove="main('{{lugar}}','{{estado}}')" ></div>
+			<div class='foco2'><img id="Foco2" src="static/focoapagado.png" onmousemove="main('{{lugar}}','{{estado}}')" ></div>
+			<div class='foco3'><img id="Foco3" src="static/focoapagado.png" onmousemove="main('{{lugar}}','{{estado}}')" ></div>
+			<div class='foco4'><img id="Foco4" src="static/focoapagado.png" onmousemove="main('{{lugar}}','{{estado}}')" ></div>
+			<div class='foco5'><img id="Foco5" src="static/focoapagado.png" onmousemove="main('{{lugar}}','{{estado}}')" ></div>
+			<div class='foco6'><img id="Foco6" src="static/focoapagado.png" onmousemove="main('{{lugar}}','{{estado}}')" ></div>
+			<div class='garage'><img id="Carro" class=carrotam src="" onmousemove="main('{{lugar}}','{{estado}}')" ></div>
 			{% endif %}
       <div class='puerta'>
       <div class='pomo'></div>
@@ -428,8 +443,8 @@ img {
       <div  class='manzana3'></div>
     </div>
   </div>
-
 </body>
+	<!-- Declaración de función javascript -->
   <script src='static/main.js'></script>         
 </html>
 

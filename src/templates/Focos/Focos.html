@@ -1,26 +1,41 @@
+<!-- Proyecto Final Sistemas Embebidos -->
+<!-- Smart Home Panel Focos -->
+<!-- Autores: Hernández Hernández Alonso de Jesús -->
+<!-- 					Alvarado García Jose Manuel -->
+<!-- Fecha: 23 de Mayo del 2022 -->
 <!DOCTYPE html>
 <html>
 <head>
+<!-- Panel de Control de Temporizador -->
 <title>Panel de Control Focos Home</title>
 </head>
 <body>
+<!-- Botones  -->
 	<header><h1>Control Focos Home</h1></header>
 	<section class="container">
 		<article class="column">
+			<!-- Titulo Focos Encender -->
 			<header><h2>Focos Encender</h2></header>
+			<!-- Declaramos metodo POST y accion formulario en la seccion Apagar-->
 			<form method="POST" action="{{url_for('Encender')}}">
+			<!-- Boton enviar a formulario en sección Encender-->
 			<input type="submit" name="Encender" value="Foco1"></input>
 			<input type="submit" name="Encender" value="Foco2"></input>
 			<input type="submit" name="Encender" value="Foco3"></input>
 			<input type="submit" name="Encender" value="Foco4"></input>
 			<input type="submit" name="Encender" value="Foco5"></input>
 			<input type="submit" name="Encender" value="Foco6"></input>
-			<button>Atenuacion</button>
+			<input type="submit" name="Encender" value="Atenuacion1"></input>
+			<input type="submit" name="Encender" value="Atenuacion2"></input>
+			<input type="submit" name="Encender" value="Atenuacion3"></input>
 			</form>
 		</article>
 		<article class="column">
+			<!-- Titulo Focos Apagar -->
 			<header><h2>Focos Apagar</h2></header>
+			<!-- Declaramos metodo POST y accion formulario en la seccion Apagar-->
 			<form method="POST" action="{{url_for('Apagar')}}">
+			<!-- Boton enviar a formulario en sección apagar-->
 			<input type="submit" name="Apagar" value="Foco1"></input>
 			<input type="submit" name="Apagar" value="Foco2"></input>
 			<input type="submit" name="Apagar" value="Foco3"></input>
@@ -29,13 +44,14 @@
 			<input type="submit" name="Apagar" value="Foco6"></input>
 			</form>
 		</article>
+			<!-- Titulo Menu -->
 			<header><h2>Menu</h2></header>
 			<article class="column">
+			<!-- Declaramos metodo POST y accion formulario en la seccion Menu-->
 			<form method="POST" action="{{url_for('index')}}">
 			<input type="submit" name="menu" value="menu"></input>
 			</form>
 			</article>
-
 	</section>
 </body>
 </html>

@@ -1,0 +1,66 @@
+<!-- Proyecto Final Sistemas Embebidos -->
+<!-- Smart Home Panel Temporizador -->
+<!-- Autores: Hernández Hernández Alonso de Jesús -->
+<!-- 					Alvarado García Jose Manuel -->
+<!-- Está sección de codigo fue complementado por el siguiente autor: -->
+<!-- Shubrodeep Banerjee, Acervo Lima, CÓMO CREAR UN TEMPORIZADOR DE CUENTA REGRESIVA USANDO JAVASCRIPT.https://es.acervolima.com/como-crear-un-temporizador-de-cuenta-regresiva-usando-javascript/ -->
+<!DOCTYPE HTML>
+<html>
+<head>
+<!-- Dibujado de numeración para conteo de tiempo -->
+<style>
+p {
+  text-align: center;
+  font-size: 60px;
+}
+</style>
+</head>
+<body>
+<p id="numeros"></p>
+<!-- Script usado para el conteo de tiempo -->
+<script>
+//Creacion de nuevo objeto fecha y conviritendolo a formato de tiempo
+const date = new Date().toDateString();//Recibimos la fecha actual ddmmnnaa
+var deadline = new Date(date + " {{hora}}:{{minutos}}:{{segundos}}").getTime();//Creamos un objeto tiempo para su destructuración
+var x = setInterval(function() {//inicializamos la funcion para disminuir tiempo
+var now = new Date().getTime();//se crea objeto para recibir hora actual
+var t = deadline - now;//se hace inferencia para tiempo actual y tiempo acabado
+//Se obtiene los días, horas,minutos y segundos por una división total entre minutos, segundo y horas a su vez se hace la raíz
+var days = Math.floor(t / (1000 * 60 * 60 * 24)); 
+var hours = Math.floor((t%(1000 * 60 * 60 * 24))/(1000 * 60 * 60));
+var minutes = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
+var seconds = Math.floor((t % (1000 * 60)) / 1000);
+//se obtiene el elemneto numero en cual se cambiará cada numero mostrado cada ciclo de tiempo actual
+document.getElementById("numeros").innerHTML = days + "d " 
++ hours + "h " + minutes + "m " + seconds + "s ";
+		//Si tiempo es menor a cero a finalizado el conteo y limpiamos función y a su vez enviamos mensaje
+    if (t < 0) {
+        clearInterval(x);
+        document.getElementById("numeros").innerHTML = "Finalizado";
+				//Si el estado es encender, prenderá todos los focos
+				if('{{estado}}'=='Encender')
+				{
+					localStorage.setItem('Foco1','On');
+					localStorage.setItem('Foco2','On');
+					localStorage.setItem('Foco3','On');
+					localStorage.setItem('Foco4','On');
+					localStorage.setItem('Foco5','On');
+					localStorage.setItem('Foco6','On');
+				}				
+				//si estado es apagar, apagará todos los focos
+				if('{{estado}}'=='Apagar')
+				{
+					localStorage.setItem('Foco1','Off');
+					localStorage.setItem('Foco2','Off');
+					localStorage.setItem('Foco3','Off');
+					localStorage.setItem('Foco4','Off');
+					localStorage.setItem('Foco5','Off');
+					localStorage.setItem('Foco6','Off');
+				}
+				//redireccionamiento a simulador				
+				window.location.href = "http://0.0.0.0:5000/simulador";				
+    }
+}, 1000);
+</script>
+</body>
+</html>

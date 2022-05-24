@@ -5,7 +5,6 @@ function Foco1()
 	if(estado=='On')
 	{
     imagen.src="static/foco.png";
-		setTimeOut(100);
 	}
 	else
 	{
@@ -13,7 +12,7 @@ function Foco1()
 	}
 }
 
-function Foco2(status)
+function Foco2()
 {
 	estado=localStorage.getItem('Foco2');
 	var imagen= document.getElementById('Foco2');
@@ -27,7 +26,7 @@ function Foco2(status)
 	}
 }
 
-function Foco3(status)
+function Foco3()
 {
 	estado=localStorage.getItem('Foco3');
 	var imagen= document.getElementById('Foco3');
@@ -77,7 +76,21 @@ function Foco6()
 	{
     imagen.src="static/foco.png";
 	}
-	else
+
+	if(estado=='Atenuacion1')
+	{
+    imagen.src="static/A1.png";
+	}
+
+	if(estado=='Atenuacion2')
+	{
+    imagen.src="static/A2.png";
+	}
+	if(estado=='Atenuacion3')
+	{
+    imagen.src="static/A3.png";
+	}
+	if(estado=='Off')
 	{
     imagen.src="static/focoapagado.png";	
 	}
@@ -120,40 +133,120 @@ function Timbre()
   audio.play();
 }
 
-
 function main(action,value)
 {
 	if(action=='Foco1')
 	{
 		localStorage.setItem('Foco1',value);
-		Foco1();
-
+		if(value=='Off')
+		{
+			Foco1();
+			Foco2();
+			Foco3();
+			Foco4();
+			Foco5();
+			Foco6();
+		}
+		else{
+			Foco1();
+		}
 	}
 	if(action=='Foco2')
 	{
 		localStorage.setItem('Foco2',value);
-		Foco2();
+		if(value=='Off')
+		{
+			Foco1();
+			Foco2();
+			Foco3();
+			Foco4();
+			Foco5();
+			Foco6();
+		}
+		else{
+			Foco2();
+		}
 	}
 	if(action=='Foco3')
 	{
 		localStorage.setItem('Foco3',value);
-		Foco3();
+		if(value=='Off')
+		{
+			Foco1();
+			Foco2();
+			Foco3();
+			Foco4();
+			Foco5();
+			Foco6();
+		}
+		else{
+			Foco3();
+		}
 	}
 	if(action=='Foco4')
 	{
 		localStorage.setItem('Foco4',value);
-		Foco4();
+		if(value=='Off')
+		{
+			Foco1();
+			Foco2();
+			Foco3();
+			Foco4();
+			Foco5();
+			Foco6();
+		}
+		else{
+			Foco4();
+		}
 	}
 	if(action=='Foco5')
 	{
 		localStorage.setItem('Foco5',value);
-		Foco5();
+		if(value=='Off')
+		{
+			Foco1();
+			Foco2();
+			Foco3();
+			Foco4();
+			Foco5();
+			Foco6();
+		}
+		else{
+			Foco5();
+		}
 	}
 	if(action=='Foco6')
 	{
 		localStorage.setItem('Foco6',value);
-		Foco6();
+		if(value=='Off')
+		{
+			Foco1();
+			Foco2();
+			Foco3();
+			Foco4();
+			Foco5();
+			Foco6();
+		}
+		else{
+			Foco6();
+		}
 	}
+	if(action=='Atenuacion1')
+	{
+		localStorage.setItem('Foco6',value);
+		Foco6();		
+	}
+	if(action=='Atenuacion2')
+	{
+		localStorage.setItem('Foco6',value);
+		Foco6();		
+	}
+	if(action=='Atenuacion3')
+	{
+		localStorage.setItem('Foco6',value);
+		Foco6();		
+	}
+
 
 	if(action=='Garage')
 	{

@@ -1,0 +1,40 @@
+<!-- Proyecto Final Sistemas Embebidos -->
+<!-- Smart Home Panel Clock -->
+<!-- Autores: Hernández Hernández Alonso de Jesús -->
+<!-- 					Alvarado García Jose Manuel -->
+<!-- Fecha: 23 de Mayo del 2022 -->
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Panel de Control de Temporizador -->
+<title>Panel de Control Smart Home</title>
+</head>
+<body>
+<!-- Botones  -->
+	<header><h1>Temporizador Focos</h1></header>
+	<section class="container">
+		<article class="column">
+			<!-- Titulo Temporizador -->
+			<header><h2>Temporizador</h2></header>
+			<!-- Declaramos metodo POST y accion formulario en la seccion Temporizador-->
+			<form method="POST" action="{{url_for('Temporizador')}}">
+			<p>Formato 24Hrs</p>
+			<!-- Cajas de texto para Hora,Minutos y Segundos-->
+			<input type="text" size="2" maxlength="2" value="Hora" name="Hora">
+			<input type="text" size="2" maxlength="2" value="Minutos" name="Minutos">
+			<input type="text" size="2" maxlength="2" value="Segundos" name="Segundos">
+			<!-- Boton enviar a formulario en sección enviar-->
+			<input type="submit" name="Enviar" value="Encender"></input>
+			<input type="submit" name="Enviar" value="Apagar"></input>
+			</form>
+		</article>
+		<!-- Declaramos metodo POST y accion formulario en la seccion menu-->
+		<header><h2>Menu</h2></header>
+		<article class="column">
+		<form method="POST" action="{{url_for('index')}}">
+		<input type="submit" name="menu" value="menu"></input>
+		</form>
+		</article>
+	</section>
+</body>
+</html>
